@@ -1,4 +1,3 @@
-from background import keep_alive
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor, exceptions
@@ -368,10 +367,7 @@ async def on_shutdown(dp):
 
 
 if __name__ == '__main__':
-  keep_alive()
-
   dp.middleware.setup(ThrottlingMiddleware())
-
   executor.start_polling(dp,
                          on_startup=on_startup,
                          on_shutdown=on_shutdown,
